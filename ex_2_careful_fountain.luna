@@ -1,0 +1,19 @@
+local lifetime = 0.6
+
+while true do
+	wait(.1)
+	local pos = script.Parent
+	local b = Instance.new("Part")	
+
+	b.Position = pos.Position + pos.CFrame.lookVector
+	b.Size = Vector3.new(1, 1, 1)
+	b.Shape = 0
+        b.BrickColor=BrickColor.new("Bright blue")
+	b.Transparency = 0.3
+	b.TopSurface = "Smooth"
+	b.BottomSurface = "Smooth"
+	b.CanCollide = true
+	b.Parent = game.Workspace
+	b.Velocity = Vector3.new(1, 75, 1)
+	game:GetService("Debris"):AddItem(b, lifetime)
+end
